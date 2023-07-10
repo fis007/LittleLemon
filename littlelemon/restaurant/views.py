@@ -21,6 +21,9 @@ class MenuItemView(ListCreateAPIView):
     queryset = menu.objects.all()
     serializer_class = MenuSerializer
 
+    def __str__(self):
+        return f'{self.title} : {str(self.price)}'
+
 class SingleMenuItemView(RetrieveUpdateDestroyAPIView):
     queryset = menu.objects.all()
     serializer_class = MenuSerializer
